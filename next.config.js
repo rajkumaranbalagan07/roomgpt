@@ -1,6 +1,21 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
+module.exports = {
   reactStrictMode: true,
-}
-
-module.exports = nextConfig
+  images: {
+    domains: ["upcdn.io", "replicate.delivery", "lh3.googleusercontent.com"],
+  },
+  async redirects() {
+    return [
+      {
+        source: "/github",
+        destination: "https://github.com/Nutlope/roomGPT",
+        permanent: false,
+      },
+      {
+        source: "/deploy",
+        destination: "https://vercel.com/templates/next.js/room-GPT",
+        permanent: false,
+      },
+    ];
+  },
+};
